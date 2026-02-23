@@ -1,18 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Esta es la RAIZ ('/'). Llama al método index de tu nuevo DashboardController
+Route::get('/', [DashboardController::class, 'index']);
+
+// Esta es la ruta para la vista de tus productos
+Route::get('/inventario', function () {
+    return view('productos.index');
 });

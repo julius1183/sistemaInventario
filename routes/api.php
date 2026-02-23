@@ -23,3 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::delete('/personas/{id}', [PersonaController::class, 'destroy']);
+
+use App\Http\Controllers\ProductoController;
+
+Route::apiResource('productos', ProductoController::class);
